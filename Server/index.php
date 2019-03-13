@@ -63,7 +63,8 @@ switch($funzione)
 
 	case '2':
 		//inizializzazione variabili
-		$tit=array();
+		$arr=array();
+		$i=0;
 		
 		$stmt = $conn->prepare("SELECT titolo 
 								FROM libri JOIN categorielibri ON libri.id = categorielibri.libro
@@ -86,6 +87,7 @@ switch($funzione)
 	case '3':
 		//inizializzazione variabili
 		$arr = array();
+		$i=0;
 
 		//split date inserite in input
 		$tmpInizio = explode('/', $_GET['data1']);;
