@@ -88,11 +88,10 @@ switch($funzione)
 		//inizializzazione variabili
 		$arr = array();
 		$i=0;
-		$query = "'".$_GET["data1"]."' AND '".$_GET["data2"]."'";
 
 		$stmt = $conn->prepare("SELECT titolo 
-								FROM libri
-								WHERE dataArch BETWEEN ".$query);
+		FROM libri
+		WHERE dataArch BETWEEN '".$_GET["data1"]."' AND '".$_GET["data2"]."'");
 		$stmt->execute();
 		$res = $stmt->fetchAll();
 
