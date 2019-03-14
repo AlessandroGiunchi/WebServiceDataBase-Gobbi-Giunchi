@@ -88,20 +88,11 @@ switch($funzione)
 		//inizializzazione variabili
 		$arr = array();
 		$i=0;
-
-		//split date inserite in input
-		$tmpInizio = explode('/', $_GET['data1']);;
-		$tmpFine = explode('/', $_GET['data2']);
-
-		//Timestamp data inizio ricerca
-		$dataInizio = mktime(0,0,0,$tmpInizio[1],$tmpInizio[0],$tmpInizio[2]);
-
-		//Timestamp data inizio ricerca
-		$dataFine = mktime(0,0,0,$tmpFine[1],$tmpFine[0],$tmpFine[2]);
+		$query = "'".$_GET["data1"]."' AND '".$_GET["data2"]."'";
 
 		$stmt = $conn->prepare("SELECT titolo 
 								FROM libri
-								WHERE dataArch BETWEEN ".$tmpInizio[2].$tmpInizio[1].$tmpInizio[0]." AND ".$tmpFine[2],$tmpFine[1],$tmpFine[0]);
+								WHERE dataArch BETWEEN ".$query);
 		$stmt->execute();
 		$res = $stmt->fetchAll();
 
