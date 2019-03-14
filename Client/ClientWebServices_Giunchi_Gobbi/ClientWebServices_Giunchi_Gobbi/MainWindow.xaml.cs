@@ -30,7 +30,7 @@ namespace ClientWebServices_Giunchi_Gobbi
         static string mycontent = "";
         static string titoli;
         static string[] splittato = new string[10];
-        string url = "http://10.13.100.5/gobbi/WebServicesLibri-Gobbi-Giunchi/Server/?funzione=";
+        string url = "http://10.13.100.6/gobbi/DatabaseWebService/Server/?funzione=";
 
         public MainWindow()
         {
